@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 8074165488132200780, guid: 89d1cfcb41859a947998563d7b9ecdc5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.468107
+      value: 4.556
       objectReference: {fileID: 0}
     - target: {fileID: 8074165488132200780, guid: 89d1cfcb41859a947998563d7b9ecdc5,
         type: 3}
@@ -387,7 +387,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803632796}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 336232e3e6c55aa47a7ed2a72abf4ee3, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: f60fa55dc1b3d3f43b984224ecd6664c, type: 2}
   m_EnableTreeColliders: 1
