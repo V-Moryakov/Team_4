@@ -59,13 +59,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             _moveVector += transform.right;
-            runDirection = 4;
+            runDirection = 3;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             _moveVector -= transform.right;
-            runDirection = 3;
+            runDirection = 4;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
@@ -73,6 +73,6 @@ public class PlayerController : MonoBehaviour
             _fallVelocity = -jumpForce;
         }
 
-       animator.SetInteger("run direction", runDirection);
+        animator.SetInteger("run direction", runDirection);
     }
 }
