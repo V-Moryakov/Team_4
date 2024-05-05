@@ -10,8 +10,7 @@ public class UIGameManager : MonoBehaviour
     public GameObject gameplay;
     public GameObject inventory;
     public bool inventoryIsOpened;
-
-    public string lvl;
+    public GameObject areYouSure;
 
     private void Update()
     {
@@ -21,7 +20,7 @@ public class UIGameManager : MonoBehaviour
 
     public void OpenPausePanel()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !inventory.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !inventory.activeSelf && !areYouSure.activeSelf)
         {
             ChangePausePanelIsOpened();
             if (pausePaneliIsOpened)
@@ -58,7 +57,7 @@ public class UIGameManager : MonoBehaviour
 
     public void OpenInventory()
     {
-        if (Input.GetKeyDown(KeyCode.I) && !pausePanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.I) && !pausePanel.activeSelf && !areYouSure.activeSelf)
         {
             ChangeInventoryIsOpened();
             if (inventoryIsOpened)
@@ -81,10 +80,5 @@ public class UIGameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void ChooseLvl()
-    {
-        SceneManager.LoadScene(lvl);
     }
 }
