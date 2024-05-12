@@ -68,6 +68,13 @@ public class PlayerController : MonoBehaviour
             runDirection = 4;
         }
 
+        if (Input.GetKey(KeyCode.E))
+        {
+
+            //сбор дропа
+            runDirection = 5;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
             _fallVelocity = -jumpForce;
