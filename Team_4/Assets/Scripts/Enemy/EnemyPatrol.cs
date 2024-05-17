@@ -8,11 +8,12 @@ public class EnemyPatrol : MonoBehaviour
 
     NavMeshAgent agent;
     //public List<GameObject> PatrolPoints;
-    public Transform Player;
+    Transform Player;
     public float ViewAngle;
     bool Rest = false;
     private void Start()
     {
+        Player = FindObjectOfType<PlayerController>().transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
