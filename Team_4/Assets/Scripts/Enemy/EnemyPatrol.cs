@@ -30,6 +30,8 @@ public class EnemyPatrol : MonoBehaviour
 
     void Patrol()
     {
+        agent.gameObject.GetComponent<Enemy1Attack>().CancelInvoke("AttackOnPlayer");//отменяем атаку, если враг теряет игрока;
+
         float x = 0;
         float z = 0;
         Vector3 pos = Vector3.zero;
@@ -87,7 +89,16 @@ public class EnemyPatrol : MonoBehaviour
 
     void HuntingOnPlayer()
     {
+        agent.Resume();
         agent.destination = Player.position;
+        if (agent.remainingDistance < 2)
+        {
+            agent.gameObject.GetComponent<Enemy1Attack>().AttackEnemy1();
+        }
+        else
+            agent.gameObject.GetComponent<Enemy1Attack>().CancelInvoke("AttackOnPlayer");
     }
+
+
 
 }
