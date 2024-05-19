@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float gravity = 9.8f;
     public float jumpForce = 6;
     public float speed = 4;
+    private bool isSeat = false; // если сидит, чтобы не бегал
+    public bool isSteals = false; // находится ли в стелсе
 
     public Animator animator;
 
@@ -23,6 +25,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {   //управление WSAD
         MoveUpdate();
+        if (_characterController.height < 2)
+        {
+            Invoke("Stay", 3f);
+        }
+
     }
 
     // Update is called once per frame
@@ -43,43 +50,119 @@ public class PlayerController : MonoBehaviour
     {
         _moveVector = Vector3.zero;
         var runDirection = 0;
-
-        if (Input.GetKey(KeyCode.W))
+        if (isSteals)
         {
-            _moveVector += transform.forward;
-            runDirection = 1;
+            speed = 2;
+            if (Input.GetKey(KeyCode.W))
+            {
+                _moveVector += transform.forward;
+                runDirection = 7;
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                _moveVector -= transform.forward;
+                runDirection = 7;
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                _moveVector += transform.right;
+                runDirection = 7;
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                _moveVector -= transform.right;
+                runDirection = 7;
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                isSteals = !isSteals;
+                runDirection = 8;
+            }
+        }
+        else if (!isSteals)
+        {
+            speed = 4;
+            if (isSeat != true)
+            {
+                if (Input.GetKey(KeyCode.W))
+                {
+                    _moveVector += transform.forward;
+                    runDirection = 1;
+                }
+
+                if (Input.GetKey(KeyCode.S))
+                {
+                    _moveVector -= transform.forward;
+                    runDirection = 2;
+                }
+
+                if (Input.GetKey(KeyCode.D))
+                {
+                    _moveVector += transform.right;
+                    runDirection = 3;
+                }
+
+                if (Input.GetKey(KeyCode.A))
+                {
+                    _moveVector -= transform.right;
+                    runDirection = 4;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
+                {
+                    _fallVelocity = -jumpForce;
+                }
+                //прыжок
+                if (Input.GetKeyDown(KeyCode.LeftControl))
+                {
+                    isSteals = !isSteals;
+                    runDirection = 7;
+                }
+                //чтение указателей
+                if (Input.GetKey(KeyCode.F))
+                {
+                    runDirection = 6;
+                }
+
+                //смотрит инвертарь
+                if (Input.GetKey(KeyCode.I))
+                {
+                    runDirection = 9;
+                }
+            }
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            _moveVector -= transform.forward;
-            runDirection = 2;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            _moveVector += transform.right;
-            runDirection = 3;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            _moveVector -= transform.right;
-            runDirection = 4;
-        }
-
+        //сбор дропа
         if (Input.GetKey(KeyCode.E))
         {
-
-            //сбор дропа
+            if (_characterController.height == 2.0f)
+            {
+                isSeat = true;
+                Invoke("Sit", 0.5f);
+            }
             runDirection = 5;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
-        {
-            _fallVelocity = -jumpForce;
-        }
-
         animator.SetInteger("run direction", runDirection);
+    }
+
+    void Stay()
+    {
+        _characterController.height = 2f;
+        Invoke("Go", 0.5f);
+    }
+
+    void Sit()
+    {
+        _characterController.height = 1.2f;
+    }
+
+    void Go()
+    {
+        isSeat = false;
     }
 }

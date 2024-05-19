@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 0c5e6fb902395774580e364f07551a3d
+guid: e2f4f4329fa4ef54a983c6678713234a
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Sneak Walk
+    second: Gathering Objects(sitDown)
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -17,7 +17,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: <Root Transform>
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sneak Walk
+      name: Gathering Objects(sitDown)
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 27
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
