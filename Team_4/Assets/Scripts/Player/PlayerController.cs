@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //сбор дропа
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && gameObject.GetComponent<PickUp>().ItemTrue)
         {
             if (_characterController.height == 2.0f)
             {
