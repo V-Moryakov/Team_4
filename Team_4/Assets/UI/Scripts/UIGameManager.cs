@@ -44,7 +44,7 @@ public class UIGameManager : MonoBehaviour
     void Pause()
     {
         gameplay.SetActive(false);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.2f;
     }
 
     public void Gameplay()

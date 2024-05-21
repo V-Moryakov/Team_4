@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-
+    public GameObject Tips;
     public bool ItemTrue;
+    public SlotsIngredientList PanelIngredients;
 
     private void Update()
     {
@@ -24,14 +25,16 @@ public class PickUp : MonoBehaviour
                 {
                     if ( hit.distance < 3)
                     {
+                        Tips.SetActive(true);
                         ItemTrue = true;
-                        if (Input.GetKeyDown(KeyCode.E))
-                        {
-                            Destroy(hit.collider.gameObject);
-                        }
+                        Podbor(hit);
                     }
                     else
+                    {
+                        Tips.SetActive(false);
                         ItemTrue = false;
+                    }
+                        
                 }
                 else
                     ItemTrue = false;
@@ -39,4 +42,13 @@ public class PickUp : MonoBehaviour
         }
     }
 
+    void Podbor(RaycastHit hit1)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy(hit1.collider.gameObject);
+            PanelIngredients.AddItem(hit1.collider.gameObject);
+            Tips.SetActive(false);
+        }
+    }
 }
