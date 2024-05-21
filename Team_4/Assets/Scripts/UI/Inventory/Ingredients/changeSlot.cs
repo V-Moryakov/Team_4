@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,6 +42,7 @@ public class changeSlot : MonoBehaviour
             Inventory.GetComponent<MoveIngredients>().IconSwitch(1);
             slot.gameObject.transform.Find("Button").gameObject.SetActive(true);
             slot.gameObject.transform.Find("Button").gameObject.GetComponent<Image>().sprite = gameObject.GetComponent<Image>().sprite;
+            slot.gameObject.transform.Find("Button").Find("ElementName").GetComponent<TextMeshProUGUI>().text = gameObject.transform.Find("ElementName").GetComponent<TextMeshProUGUI>().text;
             slot = null;
             smena = false;
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using TMPro;
 
 public class MoveIngredients : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class MoveIngredients : MonoBehaviour
                 EventSystem.current.currentSelectedGameObject.SetActive(false);
                 reserv.SetActive(true);
                 reserv.GetComponent<UnityEngine.UI.Image>().sprite = EventSystem.current.currentSelectedGameObject.GetComponent<UnityEngine.UI.Image>().sprite;
+                reserv.transform.Find("ElementName").GetComponent<TextMeshProUGUI>().text = EventSystem.current.currentSelectedGameObject.transform.Find("ElementName").GetComponent<TextMeshProUGUI>().text;
                 reserv.transform.position = Input.mousePosition;
                 reserv.GetComponent<changeSlot>().smena = true;
             }
@@ -45,7 +47,10 @@ public class MoveIngredients : MonoBehaviour
     public void IconSwitch(int i)
     {
         if(i == 1)
+        {
             icon.SetActive(false);
+            icon.transform.Find("ElementName").GetComponent<TextMeshProUGUI>().text = "";
+        }
         else
             icon.SetActive(true);
     }
