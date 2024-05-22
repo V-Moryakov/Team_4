@@ -21,6 +21,7 @@ public class EnemyHP : MonoBehaviour
     void EnemyDie()
     {
         Destroy(gameObject);
+        FindObjectOfType<PlayerExpiriance>().gameObject.GetComponent<PlayerExpiriance>().xp += 10;
     }
 
 }
