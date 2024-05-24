@@ -7,6 +7,7 @@ public class Enemy1Attack : MonoBehaviour
 
     public float damage = 20;
     GameObject Player;
+    public Animator animator;
 
     private void Start()
     {
@@ -16,12 +17,14 @@ public class Enemy1Attack : MonoBehaviour
 
     public void AttackEnemy1()
     {
+        animator.SetTrigger("attack");
         Invoke("AttackOnPlayer", 2);
     }
     void AttackOnPlayer()
     {
-        Player.GetComponent<PlayerHealth>().DealDamage(damage);
+        Player.GetComponent<PlayerHealth>().DealDamage(damage * Time.deltaTime);
         CancelInvoke("AttackOnPlayer");
+
     }
 
 }

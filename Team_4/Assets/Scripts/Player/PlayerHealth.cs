@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         //HPBarUpdate();
+
     }
 
     public void DealDamage(float damage)
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
             PlayerIsDead();
         }
         HPBarUpdate();
+
     }
 
     private void PlayerIsDead()
