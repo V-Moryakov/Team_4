@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3305416103477921460}
   - component: {fileID: 7681718436549936597}
   - component: {fileID: 1741854663209435604}
+  - component: {fileID: 1242828210748898412}
   m_Layer: 0
   m_Name: enemy_knight
   m_TagString: Enemy
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ViewAngle: 120
+  maxSeenDistance: 0
 --- !u!114 &7681718436549936597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +162,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 254760059172930651}
+--- !u!114 &1242828210748898412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305416103477921454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcb2dcd64c7d7e4fbd4cfe4bda724bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7838939445039766688
 MonoBehaviour:
   m_ObjectHideFlags: 0

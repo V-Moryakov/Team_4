@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ViewAngle: 120
+  maxSeenDistance: 20
 --- !u!114 &2004238959835261646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  animator: {fileID: 0}
+  animator: {fileID: 8269620932338756416}
 --- !u!114 &7594970124460666575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2248d979728b0b4fbf56db09ec54146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 8269620932338756416}
 --- !u!1001 &2569600204448667345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,6 +267,12 @@ GameObject:
 --- !u!4 &2604123716049858874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 467f389acbb3a8c428fb2fa62b7c2431,
+    type: 3}
+  m_PrefabInstance: {fileID: 2569600204448667345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8269620932338756416 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 467f389acbb3a8c428fb2fa62b7c2431,
     type: 3}
   m_PrefabInstance: {fileID: 2569600204448667345}
   m_PrefabAsset: {fileID: 0}
