@@ -16,7 +16,7 @@ public class ClickAndAttack : MonoBehaviour
     {
         var diracton = gameObject.transform.forward;
         RaycastHit hit;
-        if (Physics.Raycast(gameObject.transform.position, diracton, out hit))
+        if (Physics.Raycast(gameObject.transform.position + Vector3.up, diracton, out hit))
         {
             if (hit.collider.CompareTag("Enemy") && Input.GetMouseButtonDown(0))
             {

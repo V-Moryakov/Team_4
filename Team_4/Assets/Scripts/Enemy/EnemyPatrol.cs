@@ -11,8 +11,11 @@ public class EnemyPatrol : MonoBehaviour
     Transform Player;
     public float ViewAngle;
     bool Rest = false;
+    Animator anime;
+    public float maxSeenDistance;
     private void Start()
     {
+        anime = transform.Find("Goblin_rouge_r").GetComponent<Animator>();
         Player = FindObjectOfType<PlayerController>().transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -78,9 +81,14 @@ public class EnemyPatrol : MonoBehaviour
             if (Physics.Raycast((transform.position + Vector3.up), direction, out hit))
             {
                 if (hit.collider.GetComponent<PlayerController>() != null)
-                    HuntingOnPlayer();
-                else
-                    Patrol();
+                {
+                    //Debug.Log(hit.distance);
+                    if (hit.distance <= maxSeenDistance)
+                        HuntingOnPlayer();
+                    else
+                        Patrol();
+                }
+
             }
         }
         else
@@ -96,7 +104,11 @@ public class EnemyPatrol : MonoBehaviour
             agent.gameObject.GetComponent<Enemy1Attack>().AttackEnemy1();
         }
         else
+        {
+            anime.SetInteger("moving", 1);
             agent.gameObject.GetComponent<Enemy1Attack>().CancelInvoke("AttackOnPlayer");
+        }
+            
     }
 
 

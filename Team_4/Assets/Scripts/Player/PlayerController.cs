@@ -85,6 +85,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (!isSteals)
         {
+            var enemy = FindObjectsOfType<EnemyPatrol>();
+            for(int i = 0; i < enemy.Length; i++)
+            {
+                enemy[i].ViewAngle = 360;
+            }
             speed = 4;
             if (isSeat != true)
             {
@@ -135,7 +140,14 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-
+        if(isSteals)
+        {
+            var enemy = FindObjectsOfType<EnemyPatrol>();
+            for (int i = 0; i < enemy.Length; i++)
+            {
+                enemy[i].ViewAngle = 120;
+            }
+        }
         //сбор дропа
         if (Input.GetKey(KeyCode.E) && gameObject.GetComponent<PickUp>().ItemTrue)
         {

@@ -22,7 +22,7 @@ public class Enemy1Attack : MonoBehaviour
     }
     void AttackOnPlayer()
     {
-        Player.GetComponent<PlayerHealth>().DealDamage(damage * Time.deltaTime);
+        Player.GetComponent<PlayerHealth>().DealDamage(damage);
         CancelInvoke("AttackOnPlayer");
 
     }
