@@ -34,6 +34,9 @@ public class PlayerHealth : MonoBehaviour
     private void PlayerIsDead()
     {
         animator.SetTrigger("death");
+        GetComponent<FireOnClick>().enabled = false;
+        GetComponent<CameraRotation>().enabled = false;
+        GetComponent<PlayerController>().enabled = false;
     }
     public void HPBarUpdate()
     {
