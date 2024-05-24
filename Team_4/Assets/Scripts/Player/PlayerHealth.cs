@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public float health;
     public float maxHealth;
     public RectTransform HPBar;
+    public Animator animator;
     private void Start()
     {
         maxHealth = health;
@@ -21,7 +22,16 @@ public class PlayerHealth : MonoBehaviour
     public void DealDamage(float damage)
     {
         health -= damage;
+        if (health <= 0)
+        {
+            PlayerIsDead();
+        }
         HPBarUpdate();
+    }
+
+    private void PlayerIsDead()
+    {
+        animator.SetTrigger("death");
     }
     public void HPBarUpdate()
     {

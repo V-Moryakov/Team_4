@@ -517,6 +517,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   HPBar: {fileID: 6694658536907193472}
+  animator: {fileID: 6514423011538710330}
 --- !u!114 &1706175691560895162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,7 +2464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
   m_SizeDelta: {x: 302.7356, y: 164.99597}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8302126958445710681
