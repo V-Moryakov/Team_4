@@ -11,11 +11,10 @@ public class EnemyPatrol : MonoBehaviour
     Transform Player;
     public float ViewAngle;
     bool Rest = false;
-    Animator anime;
+    public Animator anime;
     public float maxSeenDistance;
     private void Start()
     {
-        anime = transform.Find("Goblin_rouge_r").GetComponent<Animator>();
         Player = FindObjectOfType<PlayerController>().transform;
         agent = GetComponent<NavMeshAgent>();
     }

@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ViewAngle: 120
+  anime: {fileID: 321236989942220694}
   maxSeenDistance: 0
 --- !u!114 &2370132283954710420
 MonoBehaviour:
