@@ -37,8 +37,9 @@ public class EnemyPatrol : MonoBehaviour
         float x = 0;
         float z = 0;
         Vector3 pos = Vector3.zero;
-        if(agent.remainingDistance <= 2)
+        if(agent.remainingDistance <= 3)
         {
+            Debug.Log("1");
             x = Random.Range(-10, 10);
             z = Random.Range(-10, 10);
             pos = new Vector3(x, 0, z);
@@ -54,6 +55,7 @@ public class EnemyPatrol : MonoBehaviour
     }
     void RestOnPatrol()
     {
+        Debug.Log("3");
         float timeForRest = Random.Range(5, 10);
         Rest = false;
         agent.Stop();
@@ -87,6 +89,8 @@ public class EnemyPatrol : MonoBehaviour
                     else
                         Patrol();
                 }
+                else
+                    Patrol();
 
             }
         }
@@ -96,6 +100,7 @@ public class EnemyPatrol : MonoBehaviour
 
     void HuntingOnPlayer()
     {
+        Debug.Log("2");
         agent.Resume();
         agent.destination = Player.position;
         if (agent.remainingDistance < 2)
