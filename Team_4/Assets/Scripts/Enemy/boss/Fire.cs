@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fire : MonoBehaviour
+public class Fire : MonoBehaviour
 {
 
     public float speed;
@@ -11,13 +11,13 @@ public class fire : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<EnemyHP>() != null)
+        if (collision.gameObject.GetComponent<PlayerHealth>() != null)
         {
-            collision.gameObject.GetComponent<EnemyHP>().DealDamage(damage);
+            collision.gameObject.GetComponent<PlayerHealth>().DealDamage(damage);
             FireDestroy();
         }
-        else
-            FireDestroy();
+        //else
+            //FireDestroy();
     }
 
     private void Update()
@@ -35,5 +35,4 @@ public class fire : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }
