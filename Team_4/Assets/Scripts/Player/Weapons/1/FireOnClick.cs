@@ -7,6 +7,7 @@ public class FireOnClick : MonoBehaviour
 
     public GameObject Fire;
     public Transform Source;
+    public AudioSource moveSound;
 
     private void Update()
     {
@@ -19,6 +20,7 @@ public class FireOnClick : MonoBehaviour
     void FireCreat()
     {
         Instantiate(Fire, Source.position, Source.rotation);
+        moveSound.Play();
     }
 
 }
