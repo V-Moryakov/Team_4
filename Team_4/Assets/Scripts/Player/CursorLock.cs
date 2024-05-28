@@ -6,15 +6,41 @@ using UnityEngine;
 public class CursorLock : MonoBehaviour
 {
 
-    public GameObject menu;
-
+    bool ismenu;
+    int sum;
+    public GameObject[] UI;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && menu.active == false || menu.active == false)
+        sum = 0;
+        for(int i = 0; i < UI.Length; i++)
+        {
+            if (UI[i].active == false)
+                sum++;
+        }
+        if(sum == UI.Length)
+        {
+            NotMenu();
+        }
+        else
+        {
+            IsMenu();
+        }
+
+        if(Input.GetMouseButtonDown(0) && !ismenu || !ismenu)
             Cursor.lockState = CursorLockMode.Locked;
-        if (menu.active == true)
+        if (ismenu)
             Cursor.lockState = CursorLockMode.Confined;
     }
+
+    public void IsMenu()
+    {
+        ismenu = true;
+    }
+    public void NotMenu()
+    {
+        ismenu = false;
+    }
+
 }

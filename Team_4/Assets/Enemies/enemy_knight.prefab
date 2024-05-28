@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ViewAngle: 120
   anime: {fileID: 254760059172930651}
-  maxSeenDistance: 0
+  maxSeenDistance: 20
 --- !u!114 &7681718436549936597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2248d979728b0b4fbf56db09ec54146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 100
   animator: {fileID: 254760059172930651}
 --- !u!114 &1242828210748898412
 MonoBehaviour:

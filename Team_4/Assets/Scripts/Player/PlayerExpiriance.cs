@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerExpiriance : MonoBehaviour
@@ -8,13 +9,26 @@ public class PlayerExpiriance : MonoBehaviour
     public RectTransform xpBar;
     public float xp, xpNeed;
     public int level=1;
-
+    public TextMeshProUGUI lvlText;
+    bool lvlMax = false;
     private void Update()
     {
         DrawUI();
-        if(xp >= xpNeed)
-        {
-            lvlUp();
+        if (!lvlMax)
+        { 
+            if (levels.Count > level)
+            {
+                if (xp >= xpNeed)
+                {
+                    lvlUp();
+                }
+            }
+            else
+            {
+                lvlText.text = level.ToString();
+                xp = xpNeed;
+                lvlMax = true;
+            }
         }
     }
 
@@ -23,11 +37,13 @@ public class PlayerExpiriance : MonoBehaviour
 
     public void lvlUp()
     {
-        level += 1;
-        xp = 0;
-        xpNeed = levels[level-1].xpNeed;
-        gameObject.GetComponent<PlayerHealth>().maxHealth = levels[level - 1].hpMax;
-        gameObject.GetComponent<PlayerHealth>().health = levels[level - 1].hpMax * (gameObject.GetComponent<PlayerHealth>().health/ levels[level - 2].hpMax);
+
+            level += 1;
+            xp = 0;
+            xpNeed = levels[level-1].xpNeed;
+            gameObject.GetComponent<PlayerHealth>().maxHealth = levels[level - 1].hpMax;
+            gameObject.GetComponent<PlayerHealth>().health = levels[level - 1].hpMax * (gameObject.GetComponent<PlayerHealth>().health/ levels[level - 2].hpMax);
+            lvlText.text = level.ToString();
 
     }
 

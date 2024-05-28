@@ -6,12 +6,12 @@ using UnityEngine.AI;
 public class EnemyHP : MonoBehaviour
 {
 
-    float hp = 100;
+    public float hp = 100;
     public Animator animator;
-
+    bool isDie = false;
     private void Update()
     {
-        if (hp < 0)
+        if (hp < 0 && !isDie)
             EnemyDie();
 
     }
@@ -24,11 +24,16 @@ public class EnemyHP : MonoBehaviour
 
     void EnemyDie()
     {
+        isDie = true;
+        Invoke("DestroyObj", 3.33f);
         animator.SetTrigger("death");
         GetComponent<EnemyPatrol>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
-        // Destroy(gameObject);
         FindObjectOfType<PlayerExpiriance>().gameObject.GetComponent<PlayerExpiriance>().xp += 10;
+    }
+    void DestroyObj()
+    {
+        Destroy(gameObject);
     }
 }

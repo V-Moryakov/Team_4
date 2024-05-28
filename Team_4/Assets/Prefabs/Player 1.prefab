@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 4382068051204815221}
   - component: {fileID: 3899234559764642093}
   - component: {fileID: 4856629388569113371}
+  - component: {fileID: 2309150792071192601}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -746,6 +747,7 @@ MonoBehaviour:
   xp: 0
   xpNeed: 100
   level: 1
+  lvlText: {fileID: 0}
 --- !u!114 &4856629388569113371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,6 +762,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Laser: {fileID: 2333901156729721423, guid: 737566785d350ac4a92287be601ac139, type: 3}
   moveSound: {fileID: 0}
+--- !u!114 &2309150792071192601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487271607053142650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9581ac667cc21834ab11da82397703ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI:
+  - {fileID: 7650877697202691532}
+  - {fileID: 2608701222345792786}
+  - {fileID: 7082033083821570319}
+  - {fileID: 4897807199846188804}
+  - {fileID: 9221836421715133007}
+  - {fileID: 6767794834721310655}
 --- !u!1 &508588360266037703
 GameObject:
   m_ObjectHideFlags: 0
