@@ -747,7 +747,7 @@ MonoBehaviour:
   xp: 0
   xpNeed: 100
   level: 1
-  lvlText: {fileID: 0}
+  lvlText: {fileID: 7915060991968922318}
 --- !u!114 &4856629388569113371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser: {fileID: 2333901156729721423, guid: 737566785d350ac4a92287be601ac139, type: 3}
-  moveSound: {fileID: 0}
 --- !u!114 &2309150792071192601
 MonoBehaviour:
   m_ObjectHideFlags: 0

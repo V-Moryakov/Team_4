@@ -6,7 +6,7 @@ public class ClickAndAttack : MonoBehaviour
 {
 
     public GameObject Laser;
-    public AudioSource moveSound;
+    //public AudioSource moveSound;
 
     private void Update()
     {
@@ -29,7 +29,7 @@ public class ClickAndAttack : MonoBehaviour
     void Attack(Transform point)
     {
         Instantiate(Laser, point.position, new Quaternion(0,0,0,0));
-        moveSound.Play();
+        //moveSound.Play();
 
     }
 }
