@@ -14,8 +14,9 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         sentences = new Queue<string>();
-        if (SceneManager.sceneCountInBuildSettings == 1)
+        if (currentSceneIndex == 1)
         {
             StartDialogue();
         }

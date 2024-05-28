@@ -655,6 +655,7 @@ MonoBehaviour:
   maxHealth: 100
   HPBar: {fileID: 6694658536907193472}
   animator: {fileID: 6514423011538710330}
+  gameOverScreen: {fileID: 9221836421715133007}
 --- !u!114 &1706175691560895162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fire: {fileID: 8809312436212432331, guid: cf4ade848e8772b4394b9ae883793eed, type: 3}
   Source: {fileID: 192885309360546055}
+  moveSound: {fileID: 0}
 --- !u!114 &8979878139602336671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser: {fileID: 2333901156729721423, guid: 737566785d350ac4a92287be601ac139, type: 3}
+  moveSound: {fileID: 0}
 --- !u!1 &508588360266037703
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,8 +6616,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: NewGame
+      - m_Target: {fileID: 7325657468308076293}
+        m_MethodName: LoadCurrentLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9639,7 +9642,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7325657468308076293}
         m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:

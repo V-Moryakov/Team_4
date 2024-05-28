@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth;
     public RectTransform HPBar;
     public Animator animator;
+    public GameObject gameOverScreen;
     private void Start()
     {
         maxHealth = health;
@@ -37,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<FireOnClick>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
         GetComponent<PlayerController>().enabled = false;
+        gameOverScreen.SetActive(true);
     }
     public void HPBarUpdate()
     {
