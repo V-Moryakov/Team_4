@@ -103,7 +103,7 @@ public class EnemyPatrol : MonoBehaviour
         //Debug.Log("2");
         agent.Resume();
         agent.destination = Player.position;
-        if (agent.remainingDistance < 2)
+        if (agent.remainingDistance <= agent.stoppingDistance)
         {
             agent.gameObject.GetComponent<Enemy1Attack>().AttackEnemy1();
         }
