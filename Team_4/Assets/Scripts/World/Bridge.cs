@@ -21,7 +21,7 @@ public class Bridge : MonoBehaviour
 
     void KnightIsFall()
     {
-        if (!FindObjectOfType<Knight>() && !anim.GetBool("KnightIsFall"))
+        if (!FindObjectOfType<Knight>() && !anim.GetBool("KnightIsFall") && FindObjectOfType<WeaponUnlock>().gameObject.GetComponent<WeaponUnlock>().weapon2)
         {
             GetComponent<Animator>().enabled = true;
             anim.SetBool("KnightIsFall", true);

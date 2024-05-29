@@ -109,7 +109,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 60
+    agentSlope: 40.1
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -2133,6 +2133,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7467432829698622708, guid: c49c409307b80144cbb1f16a8b565a8f,
     type: 3}
   m_PrefabInstance: {fileID: 1129608017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &579175789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3305416103477921454, guid: e111819171d3b2141b0cb6f55092f517,
+    type: 3}
+  m_PrefabInstance: {fileID: 1951189234}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &581659581
 PrefabInstance:
@@ -6643,6 +6649,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_knight
       objectReference: {fileID: 0}
+    - target: {fileID: 3305416103477921454, guid: e111819171d3b2141b0cb6f55092f517,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3305416103477921460, guid: e111819171d3b2141b0cb6f55092f517,
         type: 3}
       propertyPath: maxSeenDistance
@@ -6656,17 +6667,17 @@ PrefabInstance:
     - target: {fileID: 3305416103477921461, guid: e111819171d3b2141b0cb6f55092f517,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129.62
+      value: 127.65
       objectReference: {fileID: 0}
     - target: {fileID: 3305416103477921461, guid: e111819171d3b2141b0cb6f55092f517,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.4
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 3305416103477921461, guid: e111819171d3b2141b0cb6f55092f517,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 153.6
+      value: 175.53
       objectReference: {fileID: 0}
     - target: {fileID: 3305416103477921461, guid: e111819171d3b2141b0cb6f55092f517,
         type: 3}
@@ -7371,6 +7382,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 966
       objectReference: {fileID: 0}
+    - target: {fileID: 4085400506943642845, guid: f7c4752bcaa3f8e43b07bc7ccf318948,
+        type: 3}
+      propertyPath: knight
+      value: 
+      objectReference: {fileID: 579175789}
     - target: {fileID: 4545391132224216412, guid: f7c4752bcaa3f8e43b07bc7ccf318948,
         type: 3}
       propertyPath: m_AnchoredPosition.x
