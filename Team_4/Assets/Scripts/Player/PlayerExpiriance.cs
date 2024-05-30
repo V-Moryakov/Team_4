@@ -11,6 +11,14 @@ public class PlayerExpiriance : MonoBehaviour
     public int level=1;
     public TextMeshProUGUI lvlText;
     bool lvlMax = false;
+
+    private void Start()
+    {
+        level = PlayerPrefs.GetInt("level");
+        GetLevel();
+    }
+
+
     private void Update()
     {
         DrawUI();
@@ -44,7 +52,16 @@ public class PlayerExpiriance : MonoBehaviour
             gameObject.GetComponent<PlayerHealth>().maxHealth = levels[level - 1].hpMax;
             gameObject.GetComponent<PlayerHealth>().health = levels[level - 1].hpMax * (gameObject.GetComponent<PlayerHealth>().health/ levels[level - 2].hpMax);
             lvlText.text = level.ToString();
+            PlayerPrefs.SetInt("level", level);
+    }
 
+    public void GetLevel()
+    {
+        xpNeed = levels[level - 1].xpNeed;
+        gameObject.GetComponent<PlayerHealth>().maxHealth = levels[level - 1].hpMax;
+        gameObject.GetComponent<PlayerHealth>().health = levels[level - 1].hpMax * (gameObject.GetComponent<PlayerHealth>().health / levels[level - 2].hpMax);
+        lvlText.text = level.ToString();
+        DrawUI();
     }
 
     public void DrawUI()

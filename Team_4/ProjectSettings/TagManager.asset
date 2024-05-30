@@ -8,6 +8,7 @@ TagManager:
   - inventoryItem
   - Slot
   - Enemy
+  - weapon
   layers:
   - Default
   - TransparentFX

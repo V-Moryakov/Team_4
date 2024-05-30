@@ -6,9 +6,16 @@ using UnityEngine.AI;
 public class EnemyHP : MonoBehaviour
 {
 
-    public float hp = 100;
+    public float hp = 100, maxhp;
     public Animator animator;
     bool isDie = false;
+
+
+    private void Start()
+    {
+        maxhp = hp;
+    }
+
     private void Update()
     {
         if (hp < 0 && !isDie)

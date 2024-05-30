@@ -151,6 +151,8 @@ public class PlayerController : MonoBehaviour
         //сбор дропа
         if (Input.GetKey(KeyCode.E) && gameObject.GetComponent<PickUp>().ItemTrue)
         {
+            if(!animator.GetBool("pick up"))
+                animator.SetBool("pick up", true);
             if (_characterController.height == 2.0f)
             {
                 isSeat = true;
@@ -164,6 +166,7 @@ public class PlayerController : MonoBehaviour
 
     void Stay()
     {
+        animator.SetBool("pick up", false);
         _characterController.height = 2f;
         Invoke("Go", 0.5f);
     }

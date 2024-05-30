@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour
     {
         var diraction = gameObject.transform.forward;
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, diraction, out hit))
+        if (Physics.Raycast(transform.position + Vector3.up, diraction, out hit))
         {
             if (hit.collider != null)
             {
@@ -37,7 +37,10 @@ public class PickUp : MonoBehaviour
                         
                 }
                 else
+                {
+                    Tips.SetActive(false);
                     ItemTrue = false;
+                }
             }
         }
     }
